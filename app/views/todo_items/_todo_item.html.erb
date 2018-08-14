@@ -1,7 +1,9 @@
 <div class="row clearfix">
     <% if todo_item.completed? %>
     <div class="complete">
-        <%= link_to "Mark as complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch, data: {confirm: "Have you Been Completed This Task?."} %>
+        <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch, data: {confirm: "Have you Been Completed This Task?."} do |f|%>
+        <i style="opacity: 0.4;" class="fa fa-check"></i>
+        <% end %>
     </div>
     <div class="todo_item">
         <p style="opacity: 0.4;">
@@ -11,17 +13,23 @@
         </p>
     </div>
         <div class="trash">
-            <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are You Sure?."} %>
+            <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are You Sure?."} do |f| %>
+                <i style="opacity: 0.4s" class="fa fa-trash"></i>
+            <% end %>
         </div>
         <% else %>
-           <div class="complete">
-        <%= link_to "Mark as complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch, data: {confirm: "Have you Been Completed This Task?."} %>
+        <div class="complete">
+        <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch, data: {confirm: "Have you Been Completed This Task?."} do |f|%>
+        <i class="fa fa-check"></i>
+        <% end %>
     </div>
     <div class="todo_item">
         <p><%= todo_item.content %></p>
     </div>
         <div class="trash">
-            <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are You Sure?."} %>
+           <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are You Sure?."} do |f| %>
+                <i class="fa fa-trash"></i>
+            <% end %>
         </div>
    <% end %>
 </div>
