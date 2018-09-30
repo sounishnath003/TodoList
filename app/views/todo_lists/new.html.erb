@@ -1,8 +1,21 @@
 <h1 class="todo_list_title">New Todo List</h1>
 
+<%= form_for @todo_list do |f| %>
+    <% if @todo_list.errors.any? %>
+    <div id="errors">
+        <h3><%=  pluralize(@todo_list.errors.count, "errors")%> prevented this post from saving!</h3>
+        <ul>
+        <%= @todo_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end%>
+    <% end %>
+<% end %>
+
 <div class="forms">
 <%= render 'form', todo_list: @todo_list %>
 </div>
 <div class="links">
 <%= link_to 'Back', todo_lists_path %>
 </div>
+
+
