@@ -14,11 +14,11 @@
  *= require_self
  */
 
-  @import url('https://fonts.googleapis.com/css?family=Lato');
   $white_opaque: rgba(250, 250, 250, .3);
   $dark: black; /*#1F7972*/;
   * {
       box-sizing: border-box;
+      /*font-style: 'product sans';*/
   }
 
   html {
