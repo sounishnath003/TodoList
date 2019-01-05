@@ -80,16 +80,18 @@
       a {
           text-decoration: none;
           color: white;
+          font-size: 3.33em;
+          line-height: 50px;
           transition: all .4s ease-in-out;
           &:hover {
               opacity: 0.4;
           }
       }
   }
-  .fix_style{
+  /*.fix_style{
     line-height: 50px;
-    font-size: 0.90em;
-  }
+    font-size: 1em;
+  }*/
 
   .todo_list_sub_title {
       margin: 0 0 3em 0;
